@@ -1,0 +1,28 @@
+{
+  "name": "sms-app",
+  "version": "0.0.1",
+  "description": "Hello World",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DropnUp/SMS-App.git"
+  },
+  "keywords": [
+    "sms",
+    "api",
+    "app"
+  ],
+  "author": "Rakibul Yeasin Totul",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DropnUp/SMS-App/issues"
+  },
+  "homepage": "https://github.com/DropnUp/SMS-App#readme",
+  "devDependencies": {
+    "e": "0.0.4",
+    "electron": "^3.0.0"
+  }
+}
