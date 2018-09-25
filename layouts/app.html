@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../assets/icons/favicon.ico">
 
-    <title>Login to SMS App</title>
+    <title>Send SMS</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
@@ -18,14 +18,14 @@
   </head>
 
   <body class="text-center">
-    <form class="form-signin" action="app.html">
+    <form class="form-signin">
       <img class="mb-4" src="../assets/icons/himel.jpg" alt="" width="150" height="150">
-      <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-      <label for="inputEmail" class="sr-only">Email address</label>
-      <input type="text" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-      <label for="inputPassword" class="sr-only">Password</label>
-      <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      <h1 class="h3 mb-3 font-weight-normal">Send SMS</h1>
+      <label for="inputEmail" class="sr-only">Phone Number</label>
+      <input type="text" id="number" class="form-control" placeholder="Number to Send (with 88)" required autofocus>
+      <label for="inputPassword" class="sr-only">Your Message</label>
+      <input type="longtext" id="message" class="form-control" placeholder="Password" required>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Send</button>
       <p class="mt-5 mb-3 text-muted">Made with ❤ by <a id="author" href="https://facebook.com/rytotul">Totul</a></p>
     </form>
     <script src="index.js"></script>

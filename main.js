@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, Menu } = require('electron')
   
   // Keep a global reference of the window object, if you don't, the window will
   // be closed automatically when the JavaScript object is garbage collected.
@@ -13,7 +13,7 @@ const { app, BrowserWindow } = require('electron')
   
     // Open the DevTools.
     //win.webContents.openDevTools()
-  
+
     // Emitted when the window is closed.
     win.on('closed', () => {
       // Dereference the window object, usually you would store windows
@@ -21,6 +21,19 @@ const { app, BrowserWindow } = require('electron')
       // when you should delete the corresponding element.
       win = null
     })
+
+    // Custom Menu
+    let menu = Menu.buildFromTemplate([
+      {
+        label: 'Menu',
+        submenu: [
+          {label: 'Exit'},
+          {label: 'File'},
+          {label: 'Close'}
+        ]
+      }
+    ])
+
   }
   
   // This method will be called when Electron has finished
