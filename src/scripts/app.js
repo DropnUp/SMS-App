@@ -1,12 +1,11 @@
 const electron = require('electron')
 const shell = require('electron').shell
 const axios = require('axios')
-const request = require('request')
-
 
 // All the info's
 const base = 'esms.dianahost.com'
 const api_uri = 'http://'+base+'/getkey/C2001512'+'/RYT.Yeasin@@010'
+const balance_uri = ''
 
 const author = document.getElementById('author')
 
@@ -15,25 +14,25 @@ author.addEventListener('click', (event) => {
     shell.openExternal(event.target.href)
 })
 
+function api() {
+    let api_key = document.getElementById('api_key')
+    let hello = axios.get(api_uri)
+        .then( (response) => {
+            let res = response.data.indexOf(':')
+            let new_res = response.data.slice(res + 1)
+            api_key.innerHTML = new_res
+        })
+}
+//console.log(api_key)
+api()
 
-let balance = document.getElementById('balance')
-
-
-function balance() {
-    //axios.get("http://esms.dianahost.com/getkey/C2001512/RYT.Yeasin@@010").then(res => {
-    var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", "http://esms.dianahost.com/getkey/C2001512/RYT.Yeasin@@010", false ); // false for synchronous request
-    xmlHttp.send();
-    return xmlHttp.responseText;
-    balance.innerHTML = xmlHttp.responseText;
-   //})
+function bal() {
+    let api_key = document.getElementById('api_key')
+    let balance = document.getElementById('balance')
+    axios.get('http://'+base+'/miscapi/'+api_key+'/getBalance')
+        .then( (response) => {
+            balance.innerHTML = response.data
+        })
 }
 
-// function balance() {
-//     request('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=2017-08-03', {json: false}, (err, res, body) => {
-//         if (err) { return console.log(err); }
-//         console.log(body.url);
-//         console.log(body.explanation);
-//     })
-// }
-balance()
+//bal()
