@@ -23,12 +23,11 @@
   "homepage": "https://github.com/DropnUp/SMS-App#readme",
   "devDependencies": {
     "axios": "^0.18.0",
-    "electron": "^3.0.0",
+    "electron": "^3.0.1",
     "sharp": "^0.20.8",
     "xmlhttprequest": "^1.8.0"
   },
   "dependencies": {
-    "axios": "^0.18.0",
-    "electron": "^3.0.0"
+    "axios": "^0.18.0"
   }
 }
